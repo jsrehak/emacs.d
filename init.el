@@ -1,13 +1,11 @@
-;;;.emacs file
+;;;;.emacs file
 ;;;Joshua Rehak, 5/2/2015
 
 ;; Startup
 ; Add custom lisp file location
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(require 'init-elpa)
-
-
-
+(require 'init-packages)
+(require 'init-themes)
 
 ;;Set default mode to text mode and turn on auto-fill
 (setq-default major-mode 'text-mode)
@@ -22,40 +20,37 @@
 ;; Rebind 'C-x C-b' to buffer-menu
 (global-set-key "\C-x\C-b" 'buffer-menu)
 
-
-					; don't show the startup screen
+;; Don't show the startup screen
 (setq inhibit-startup-screen t)
 
-;;ido
+;;;;Package settings
+;;Activate IDO
 (require 'ido)
 (ido-mode t)
 (setq ido-enable-flex-matching t)
 
+;;Enable flycheck
+(add-hook 'after-init-hook 'global-flycheck-mode)
+
+;;Smex items
+(setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
+(global-set-key [remap execute-extended-command] 'smex)
+
+;;Autocomplete
+(require 'auto-complete-config)
+(global-auto-complete-mode t)
+
+;;;;Hooks
 ;;Python mode hook
 (add-hook 'python-mode-hook
 	  '(lambda ()
 	     (load "~/.emacs.d/python_mode.el")
 	     ))
 
-;;Latex mode
+;;Latex  mode
 (add-hook 'TeX-mode-hook ( lambda()
-			   (load "~/.emacs.d/tex_mode.el")
+		   (load "~/.emacs.d/tex_mode.el")
 			   ))
 
 
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
-;;(tool-bar-mode -1)
-(load-theme 'zenburn t)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(custom-safe-themes (quote ("e80932ca56b0f109f8545576531d3fc79487ca35a9a9693b62bf30d6d08c9aaf" default))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
 
