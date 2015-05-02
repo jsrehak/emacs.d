@@ -1,9 +1,17 @@
-;.emacs file
-;Joshua Rehak, 5/2/2015
+;;;.emacs file
+;;;Joshua Rehak, 5/2/2015
+
+;; Startup
+; Add custom lisp file location
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(require 'init-elpa)
+
+
+
 
 ;;Set default mode to text mode and turn on auto-fill
 (setq-default major-mode 'text-mode)
-(add hook 'text-mode-hook 'turn-on-auto-fill)
+(add-hook 'text-mode-hook 'turn-on-auto-fill)
 
 ;;;; Custom keybindings
 ;; 'occur: shows all lines in the current buffer that contain a match
@@ -14,13 +22,6 @@
 ;; Rebind 'C-x C-b' to buffer-menu
 (global-set-key "\C-x\C-b" 'buffer-menu)
 
-(require 'package) ;; You might already have this line
-(add-to-list 'package-archives
-             '("melpa" . "http://melpa.org/packages/") t)
-(when (< emacs-major-version 24)
-  ;; For important compatibility libraries like cl-lib
-  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
-(package-initialize) ;; You might already have this line
 
 					; don't show the startup screen
 (setq inhibit-startup-screen t)
