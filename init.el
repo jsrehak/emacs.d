@@ -6,6 +6,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-packages)
 (require 'init-themes)
+(require 'init-auto-complete)
 
 ;;Set default mode to text mode and turn on auto-fill
 (setq-default major-mode 'text-mode)
@@ -19,9 +20,32 @@
 (global-unset-key "\C-xf")
 ;; Rebind 'C-x C-b' to buffer-menu
 (global-set-key "\C-x\C-b" 'buffer-menu)
+;; Add bindings for default text size
+(global-set-key (kbd "C-M-=") 'default-text-scale-increase)
+(global-set-key (kbd "C-M--") 'default-text-scale-decrease)
+;; Set return to newline and indent
+(global-set-key (kbd "RET") 'newline-and-indent)
 
+;; Function to move to the end of the line and make a new line and indent
+(defun newline-at-end-of-line ()
+  "Move to end of line, enter a newline, and reindent."
+  (interactive)
+  (move-end-of-line 1)
+  (newline-and-indent))
+(global-set-key (kbd "S-<return>") 'newline-at-end-of-line)
+
+;;;; Basic preferences
 ;; Don't show the startup screen
 (setq inhibit-startup-screen t)
+(setq-default
+ blink-cursor-interval 0.4
+ bookmark-default-file (expand-file-name ".bookmarks.el" user-emacs-directory)
+ buffers-menu-max-size 30
+ column-number-mode t
+ delete-selection-mode t
+ make-backup-files nil
+ scroll-preserve-screen-position t
+ show-trailing-whitespace t)
 
 ;;;;Package settings
 ;;Activate IDO
@@ -37,20 +61,20 @@
 (global-set-key [remap execute-extended-command] 'smex)
 
 ;;Autocomplete
-(require 'auto-complete-config)
-(global-auto-complete-mode t)
+;Items are now contained in init-auto-complete
 
 ;;;;Hooks
 ;;Python mode hook
 (add-hook 'python-mode-hook
 	  '(lambda ()
-	     (load "~/.emacs.d/python_mode.el")
+	     (load "python_mode.el")
 	     ))
 
 ;;Latex  mode
 (add-hook 'TeX-mode-hook ( lambda()
-		   (load "~/.emacs.d/tex_mode.el")
+		   (load "tex_mode.el")
 			   ))
+
 
 
 

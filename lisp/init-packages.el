@@ -27,5 +27,6 @@ locate PACKAGE. "
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
 (require-package 'smex)
+(require-package 'default-text-scale)
 
 (provide 'init-packages)

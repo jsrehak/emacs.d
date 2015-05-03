@@ -5,3 +5,4 @@ ac-comphist.dat
 *.elc
 /.smex-items
 \#*
+.bookmarks.el

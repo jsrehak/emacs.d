@@ -17,10 +17,6 @@
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
-;--------------------;
-;;; User Interface ;;;
-;--------------------;
-
 ; always use spaces, not tabs, when indenting
 (setq indent-tabs-mode nil)
 
@@ -30,19 +26,9 @@
 ; require final newlines in files when they are saved
 (setq require-final-newline t)
 
-; set the keybinding so that you can use f4 for goto line
-;;(global-set-key &#91;f4&#93; 'goto-line)
-
-;----------------------;
-;;; Windows & Frames ;;;
-;----------------------;
-
 ; language
 (setq current-language-environment "English")
 
-; don't show the menu bar
-;;(menu-bar-mode nil)
-; don't show the tool bar
 ;;(require 'tool-bar)
 (tool-bar-mode -1)
 ; don't show the scroll bar
@@ -77,14 +63,6 @@
 ;------------;
 ;;; Cursor ;;;
 ;------------;
-
-; highlight the current line
-;;(require 'highlight-current-line)
-;(global-hl-line-mode t)
-;(setq highlight-current-line-globally t)
-;(setq highlight-current-line-high-faces nil)
-;(setq highlight-current-line-whole-line nil)
-;(setq hl-line-face (quote highlight))
 
 ; don't blink the cursor
 (blink-cursor-mode nil)
@@ -122,7 +100,7 @@
 ;-----------------;
 
 ; use the "Subtle Hacker" color theme as a base for the custom scheme
-;;(require 'color-theme)
+(require 'color-theme)
 (color-theme-initialize)
 	     (setq color-theme-is-global t)
 	     (color-theme-subtle-hacker)
@@ -131,7 +109,7 @@
 	      '(default ((t (:overline nil :inherit nil :stipple nil :background "gray2"
 				       :foreground "#FFF991" :inverse-video nil :box nil
 				       :strike-through nil :underline nil
-				       :slant normal :weight normal :height 83 :width normal
+				       :slant normal :weight normal :height 160 :width normal
 				       :foundry "unknown" :family "DejaVu Sans Mono"))))
 	      '(border ((t nil)))
 	      '(cursor ((t (:background "firebrick1" :foreground "black"))))
