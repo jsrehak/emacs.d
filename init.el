@@ -65,7 +65,7 @@
 
 ;;;;Hooks
 ;;Python mode hook
-(add-hook 'python-mode-hook
+(add-hook 'prog-mode-hook
 	  '(lambda ()
 	     (load "python_mode.el")
 	     ))
@@ -74,7 +74,6 @@
 (add-hook 'TeX-mode-hook ( lambda()
 		   (load "tex_mode.el")
 			   ))
-
 
 
 
