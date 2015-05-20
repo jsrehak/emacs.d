@@ -6,7 +6,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-packages)
 (require 'init-themes)
-(require 'init-auto-complete)
+;(require 'init-auto-complete)
 
 ;;Set default mode to text mode and turn on auto-fill
 (setq-default major-mode 'text-mode)
@@ -61,14 +61,22 @@
 (global-set-key [remap execute-extended-command] 'smex)
 
 ;;Autocomplete
-;Items are now contained in init-auto-complete
+(require 'auto-complete-config)
+(ac-config-default)
 
 ;;;;Hooks
-;;Python mode hook
+;;Programming mode hook
 (add-hook 'prog-mode-hook
+          '(lambda ()
+             (load "prog_mode.el")
+             ))
+
+;;Python mode hook
+(add-hook 'python-mode-hook
 	  '(lambda ()
 	     (load "python_mode.el")
 	     ))
+
 
 ;;Latex  mode
 (add-hook 'TeX-mode-hook ( lambda()

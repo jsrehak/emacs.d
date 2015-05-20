@@ -28,5 +28,8 @@ locate PACKAGE. "
 (require-package 'flycheck)
 (require-package 'smex)
 (require-package 'default-text-scale)
+(require-package 'dash)
+(require-package 'epl)
+(require-package 'let-alist)
 
 (provide 'init-packages)
