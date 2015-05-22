@@ -47,6 +47,7 @@
 
 ; don't blink the cursor
 (blink-cursor-mode nil)
+(hl-line-mode t)
 
 ; make sure transient mark mode is enabled (it should be by default,
 ; but just in case)
