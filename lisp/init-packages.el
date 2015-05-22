@@ -31,5 +31,10 @@ locate PACKAGE. "
 (require-package 'dash)
 (require-package 'epl)
 (require-package 'let-alist)
+(require-package 'epc)
+(require-package 'deferred)
+(require-package 'python-environment)
+(require-package 'jedi)
+(require-package 'jedi-core)
 
 (provide 'init-packages)
