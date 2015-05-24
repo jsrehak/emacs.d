@@ -30,8 +30,11 @@
 (global-set-key "\M-z" 'zap-up-to-char)
 ;; Bind a key to hippie-expand
 (global-set-key "\M-/" 'hippie-expand)
-;; Bind a key for iy-go-to-char
-(global-set-key "\M-m" 'iy-go-to-char)
+;; Bind a key chord for iy-go-to-char
+;(global-set-key "\M-m" 'iy-go-to-char)
+(key-chord-mode)
+(key-chord-define-global "fg" 'iy-go-to-char)
+(key-chord-define-global "df" 'iy-go-to-char-backward)
 
 
 ;; Function to move to the end of the line and make a new line and indent
