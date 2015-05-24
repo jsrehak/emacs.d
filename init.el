@@ -32,7 +32,7 @@
 (global-set-key "\M-/" 'hippie-expand)
 ;; Bind a key chord for iy-go-to-char
 ;(global-set-key "\M-m" 'iy-go-to-char)
-(key-chord-mode)
+(key-chord-mode t)
 (key-chord-define-global "fg" 'iy-go-to-char)
 (key-chord-define-global "df" 'iy-go-to-char-backward)
 
