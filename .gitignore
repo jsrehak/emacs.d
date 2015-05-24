@@ -2,6 +2,7 @@
 /elpa
 ac-comphist.dat
 /auto-save-list
+saved-places
 *.elc
 /.smex-items
 \#*

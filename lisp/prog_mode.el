@@ -1,6 +1,9 @@
 ; always use spaces, not tabs, when indenting
 (setq indent-tabs-mode nil)
 
+; Turn on fly spell programming mode:
+(flyspell-prog-mode)
+
 ; ignore case when searching
 (setq case-fold-search t)
 
@@ -46,7 +49,7 @@
 ;------------;
 
 ; don't blink the cursor
-(blink-cursor-mode nil)
+(blink-cursor-mode 0)
 (hl-line-mode t)
 
 ; make sure transient mark mode is enabled (it should be by default,

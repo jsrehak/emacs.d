@@ -36,5 +36,6 @@ locate PACKAGE. "
 (require-package 'python-environment)
 (require-package 'jedi)
 (require-package 'jedi-core)
+(require-package 'iy-go-to-char)
 
 (provide 'init-packages)

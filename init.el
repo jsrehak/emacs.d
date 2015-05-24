@@ -25,6 +25,14 @@
 (global-set-key (kbd "C-M--") 'default-text-scale-decrease)
 ;; Set return to newline and indent
 (global-set-key (kbd "RET") 'newline-and-indent)
+;; Change zap-to-char to zap-up-to-char
+(autoload 'zap-up-to-char "misc" 'interactive)
+(global-set-key "\M-z" 'zap-up-to-char)
+;; Bind a key to hippie-expand
+(global-set-key "\M-/" 'hippie-expand)
+;; Bind a key for iy-go-to-char
+(global-set-key "\M-m" 'iy-go-to-char)
+
 
 ;; Function to move to the end of the line and make a new line and indent
 (defun newline-at-end-of-line ()
@@ -46,6 +54,15 @@
  make-backup-files nil
  scroll-preserve-screen-position t
  show-trailing-whitespace t)
+;; Set preference for identical filenames
+(require 'uniquify)
+(setq
+ uniquify-buffer-name-style 'post-forward
+ uniquify-separator ":")
+;; Return to last place when opening a file
+(require 'saveplace)
+(setq-default save-place t)
+(setq save-place-file "~/.emacs.d/saved-places")
 
 ;;;;Package settings
 ;;Activate IDO
