@@ -21,20 +21,29 @@ locate PACKAGE. "
 
 ;;Install packages if they are not installed
 (require-package 'auctex)
-(require-package 'popup)
 (require-package 'auto-complete)
 (require-package 'color-theme)
+(require-package 'dash)
+(require-package 'default-text-scale)
+(require-package 'deferred)
+(require-package 'epc)
+(require-package 'epl)
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
-(require-package 'smex)
-(require-package 'default-text-scale)
-(require-package 'dash)
-(require-package 'epl)
-(require-package 'let-alist)
-(require-package 'epc)
-(require-package 'deferred)
-(require-package 'python-environment)
+(require-package 'iy-go-to-char)
 (require-package 'jedi)
 (require-package 'jedi-core)
+(require-package 'let-alist)
+(require-package 'key-chord)
+(require-package 'popup)
+(require-package 'python-environment)
+(require-package 'smex)
+
+
+
+
+
+
+
 
 (provide 'init-packages)
