@@ -38,7 +38,9 @@ locate PACKAGE. "
 (require-package 'popup)
 (require-package 'python-environment)
 (require-package 'smex)
-
+(require-package 'log4e)
+(require-package 'yaxception)
+(require-package 'vbasense)
 
 
 
