@@ -3,4 +3,3 @@
 (turn-on-auto-fill)
 (flyspell-mode)
 
-(load-theme 'zenburn t)
