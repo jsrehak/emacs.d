@@ -28,6 +28,9 @@ locate PACKAGE. "
 (require-package 'deferred)
 (require-package 'epc)
 (require-package 'epl)
+(require-package 'ess)
+(require-package 'ess-R-data-view)
+(require-package 'ess-R-object-popup)
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
 (require-package 'iy-go-to-char)
@@ -41,7 +44,6 @@ locate PACKAGE. "
 (require-package 'log4e)
 (require-package 'yaxception)
 (require-package 'vbasense)
-
 
 
 
