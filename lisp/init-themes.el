@@ -2,7 +2,11 @@
 (require-package 'zenburn-theme)
 (require-package 'solarized-theme)
 
-(load-theme 'solarized-dark t)
-;(load-theme 'zenburn t)
+;(load-theme 'solarized-dark t)
+(load-theme 'zenburn t)
+
+;; set transparency 
+(set-frame-parameter (selected-frame) 'alpha '(85 85))
+(add-to-list 'default-frame-alist '(alpha 85 85));; set transparency
 
 (provide 'init-themes)
