@@ -2,4 +2,4 @@
 (setq TeX-parse-self t)
 (turn-on-auto-fill)
 (flyspell-mode)
-
+(turn-on-reftex)

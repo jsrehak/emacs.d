@@ -84,6 +84,9 @@
 (require 'auto-complete-config)
 (ac-config-default)
 
+;;Reftex
+(require 'reftex)
+
 ;;;;Hooks
 ;;Programming mode hook
 (add-hook 'prog-mode-hook
