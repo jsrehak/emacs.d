@@ -100,6 +100,10 @@
 	     (load "python_mode.el")
 	     ))
 
+(add-hook 'cc-mode-hook
+	  '(lambda ()
+	     (load "c_mode.el")
+	     ))
 
 ;;Latex  mode
 (add-hook 'TeX-mode-hook ( lambda()
