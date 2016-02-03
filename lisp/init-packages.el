@@ -26,6 +26,7 @@ locate PACKAGE. "
 (require-package 'dash)
 (require-package 'default-text-scale)
 (require-package 'deferred)
+(require-package 'ecb)
 (require-package 'epc)
 (require-package 'epl)
 (require-package 'ess)

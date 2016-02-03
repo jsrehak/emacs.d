@@ -87,6 +87,9 @@
 ;;Reftex
 (require 'reftex)
 
+;;ECB
+(require 'ecb)
+
 ;;;;Hooks
 ;;Programming mode hook
 (add-hook 'prog-mode-hook
@@ -109,6 +112,11 @@
 (add-hook 'TeX-mode-hook ( lambda()
 		   (load "tex_mode.el")
 			   ))
+
+;;Markdown mode
+(autoload 'markdown-mode "markdown_mode"
+  "Major mode for editing Markdown files" t)
+(add-to-list 'auto-mode-alist '("\\.md\\'" . markdown-mode))
 
 ;;ESS
 (autoload 'R-mode "ess-site.el" "ESS" t)
