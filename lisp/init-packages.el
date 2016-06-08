@@ -40,6 +40,7 @@ locate PACKAGE. "
 (require-package 'let-alist)
 (require-package 'key-chord)
 (require-package 'popup)
+(require-package 'projectile)
 (require-package 'python-environment)
 (require-package 'smex)
 (require-package 'log4e)
