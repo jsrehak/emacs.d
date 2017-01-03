@@ -18,6 +18,6 @@
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
-(setq jedi:server-command '("jediepcserver"))
-(jedi:setup)
-(setq jedi:complete-on-dot t)
+;(setq jedi:server-command '("jediepcserver"))
+;(jedi:setup)
+;(setq jedi:complete-on-dot t)
