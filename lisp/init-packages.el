@@ -39,6 +39,7 @@ locate PACKAGE. "
 ;;(require-package 'jedi-core)
 (require-package 'let-alist)
 (require-package 'key-chord)
+(require-package 'matlab-mode)
 (require-package 'popup)
 (require-package 'python-environment)
 (require-package 'smex)
