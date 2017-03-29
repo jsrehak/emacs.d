@@ -3,6 +3,7 @@
 (turn-on-auto-fill)
 (flyspell-mode)
 (turn-on-reftex)
+(setq-default TeX-master nil) ; Query for master file.
 
 (eval-after-load "tex"   '(add-to-list 'TeX-command-list
                                        '("Makeglossaries" "makeglossaries %s" TeX-run-command nil
