@@ -6,15 +6,17 @@
 (setq org-agenda-files '("~/repos/org/"))
 (setq org-directory "~/repos/org")
 
-(setq org-tag-alist '((:startgroup . nil)
+(setq org-tag-persistent-alist '((:startgroup)
                       ("@office" . ?w) ("@home" . ?h)
                       ("@errands" . ?e)
-                      (:endgroup . nil)
+                      (:endgroup)
+                      (:startgroup)
                       ("@short_task" . ?s)
                       ("@full_focus" . ?f)
                       ("@brain_dead" . ?b)
                       ("@routines" . ?r)
                       ("@hang_time" . ?t)
+                      (:endgroup)
                       ("URGENT" . ?u)))
 
 
