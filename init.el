@@ -13,6 +13,7 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-packages)
 (require 'init-themes)
+(require 'init-linum)
 ;(require 'init-auto-complete)
 
 ;;Set default mode to text mode and turn on auto-fill
