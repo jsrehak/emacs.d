@@ -3,6 +3,7 @@
 
 ;; Add package repositories
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
 
 ;; Define a function to install a package if required to make the code deployable
 (defun require-package (package &optional min-version no-refresh)
@@ -40,6 +41,7 @@ locate PACKAGE. "
 (require-package 'let-alist)
 (require-package 'key-chord)
 (require-package 'matlab-mode)
+(require-package 'org)
 (require-package 'popup)
 (require-package 'python-environment)
 (require-package 'smex)
