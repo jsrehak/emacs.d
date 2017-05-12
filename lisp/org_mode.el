@@ -1,11 +1,19 @@
 (setq-default
  show-trailing-whitespace nil)
 
-(setq org-todo-keywords
-      '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
-(setq org-agenda-files '("~/repos/org/"))
+; DIRECTORY STRUCTURE ================================================
 (setq org-directory "~/repos/org")
+(setq org-agenda-files '("~/repos/org"))
+(setq org-archive-location (concat org-directory "/archive/%s_archive.org"))
 
+;; Registers for files
+(set-register ?t (cons 'file (concat org-directory "/todo.org")))
+(set-register ?n (cons 'file (concat org-directory "/notes.org")))
+(set-register ?s (cons 'file (concat org-directory "/schedule.org")))
+
+
+; TAGS ===============================================================
+;; Persistent Tags list
 (setq org-tag-persistent-alist '((:startgroup)
                       ("@office" . ?w) ("@home" . ?h)
                       ("@errands" . ?e)
@@ -17,11 +25,16 @@
                       ("@routines" . ?r)
                       ("@hang_time" . ?t)
                       (:endgroup)
-                      ("URGENT" . ?u)))
+                      ("URGENT" . ?u)
+                      ("PROJECT")
+                      ("someday")))
 
+; TODO ===============================================================
+;; Todo item keywords
+(setq org-todo-keywords
+      '((sequence "TODO" "IN-PROGRESS" "WAITING" "|" "DONE" "CANCELED")))
 
-
-;; AGENDA
+;; AGENDA ============================================================
 (defun air-pop-to-org-agenda (split)
   "Visit the org agenda, in the current window or a SPLIT."
   (interactive "P")
@@ -29,17 +42,23 @@
   (when (not split)
     (delete-other-windows)))
 
+;; KEYBINDINGS =======================================================
 (define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 (define-key global-map "\C-cl" 'org-store-link)
+(define-key global-map (kbd "C-c a") 'org-agenda)
 
+;; CAPTURE ===========================================================
 
-;; TEMPLATES
+;;; TEMPLATES ========================================================
 
 (setq org-capture-templates
-      '(("a" "My TODO task format." entry
+      '(("t" "Todo" entry
          (file "todo.org")
          "* TODO %?
-SCHEDULED: %t")))
+            SCHEDULED: %t")
+        
+
+        ))
 
 ;; CAPTURING
 ;;; Global key
@@ -49,16 +68,26 @@ SCHEDULED: %t")))
 (setq org-default-todos-file (concat org-directory "/todo.org"))
 
 ;; AGENDA Views
+
+(setq org-agenda-start-day "-1d")
+(setq org-agenda-span 7)
+(setq org-agenda-start-on-weekday nil)
+          
 (setq org-agenda-custom-commands
       '(("c" "Simple agenda view"
-         ((tags "PRIORITY=\"A\""
+         (
+          (tags "PRIORITY=\"A\"|DEADLINE<=\"<+1w>\""
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                  (org-agenda-overriding-header "The Hotlist:")))
           (agenda "")
+          (tags "PROJECT")
           (alltodo ""
                    ((org-agenda-skip-function
                      '(or (jsr-org-skip-subtree-if-priority ?A)
-                          (org-agenda-skip-if nil '(scheduled deadline))))))))))
+                          (org-agenda-skip-if nil '(scheduled deadline))))))
+          ))
+        ))
+
 
 (defun jsr-org-skip-subtree-if-priority (priority)
   "Skip an agenda subtree if it has a priority of PRIORITY.
@@ -71,13 +100,13 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
         subtree-end
       nil)))
 
-;; Registers for files
-(set-register ?t (cons 'file "~/repos/org/todo.org"))
-(set-register ?n (cons 'file "~/repos/org/notes.org"))
 
 ;; MISC
 ;;; Add blank line before heading
-(setq org-blank-before-new-entry (quote ((heading) (plain-list-item))))
+(setq org-blank-before-new-entry
+      '((heading . always)
+       (plain-list-item . nil)))
+
 ;;; Force child tasks done before marking parent
 (setq org-enforce-todo-dependencies t)
 (setq org-log-done (quote time))
