@@ -43,7 +43,8 @@
 (key-chord-mode t)
 (key-chord-define-global "fg" 'iy-go-to-char)
 (key-chord-define-global "df" 'iy-go-to-char-backward)
-
+;; ORG Capture
+(define-key global-map (kbd "C-c c") 'org-capture)
 
 ;; Function to move to the end of the line and make a new line and indent
 (defun newline-at-end-of-line ()
