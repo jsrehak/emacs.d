@@ -127,7 +127,7 @@
 
 ;;Latex  mode
 (add-hook 'org-mode-hook ( lambda()
-		   (load "org_mode.el")
+		   (setq show-trailing-whitespace nil)
 			   ))
 
 ;;Markdown mode
@@ -159,3 +159,6 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+;;ORG-MODE
+(load "org_mode.el")

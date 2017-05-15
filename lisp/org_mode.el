@@ -1,5 +1,3 @@
-(setq-default
- show-trailing-whitespace nil)
 
 ; DIRECTORY STRUCTURE ================================================
 (setq org-directory "~/repos/org")
@@ -10,7 +8,7 @@
 (set-register ?t (cons 'file (concat org-directory "/todo.org")))
 (set-register ?n (cons 'file (concat org-directory "/notes.org")))
 (set-register ?s (cons 'file (concat org-directory "/schedule.org")))
-
+(set-register ?p (cons 'file (concat org-directory "/projects.org")))
 
 ; TAGS ===============================================================
 ;; Persistent Tags list
@@ -54,15 +52,17 @@
 (setq org-capture-templates
       '(("t" "Todo" entry
          (file "todo.org")
-         "* TODO %?
-            SCHEDULED: %t")
-        
-
+         "* TODO %?")
+        ("m" "Meeting" entry
+         (file "meetings.org")
+         "* Meeting: %?
+WHEN: 
+LOCATION: ")
         ))
 
 ;; CAPTURING
 ;;; Global key
-(define-key global-map (kbd "C-c c") 'org-capture)
+
 ;;; Locations
 (setq org-default-notes-file (concat org-directory "/notes.org"))
 (setq org-default-todos-file (concat org-directory "/todo.org"))
@@ -80,12 +80,20 @@
                 ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
                  (org-agenda-overriding-header "The Hotlist:")))
           (agenda "")
-          (tags "PROJECT")
+          (todo "IN-PROGRESS"
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "In-progress")))
           (alltodo ""
                    ((org-agenda-skip-function
                      '(or (jsr-org-skip-subtree-if-priority ?A)
-                          (org-agenda-skip-if nil '(scheduled deadline))))))
+                          (org-agenda-skip-entry-if 'todo '("WAITING"))
+
+                                                    ))))
+          (todo "WAITING"
+                ((org-agenda-skip-function '(org-agenda-skip-entry-if 'todo 'done))
+                 (org-agenda-overriding-header "Waiting:")))
           ))
+        
         ))
 
 
@@ -99,7 +107,6 @@ PRIORITY may be one of the characters ?A, ?B, or ?C."
     (if (= pri-value pri-current)
         subtree-end
       nil)))
-
 
 ;; MISC
 ;;; Add blank line before heading
