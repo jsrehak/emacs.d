@@ -2,7 +2,7 @@
 ; DIRECTORY STRUCTURE ================================================
 (setq org-directory "~/repos/org")
 (setq org-agenda-files '("~/repos/org"))
-(setq org-archive-location (concat org-directory "/archive/%s_archive.org"))
+(setq org-archive-location (concat org-directory "/archive/%s_archive.org::"))
 
 ;; Registers for files
 (set-register ?t (cons 'file (concat org-directory "/todo.org")))
