@@ -38,8 +38,6 @@ locate PACKAGE. "
 (require-package 'helm-bibtex)
 (require-package 'iy-go-to-char)
 (require-package 'interleave)
-;;(require-package 'jedi)
-;;(require-package 'jedi-core)
 (require-package 'let-alist)
 (require-package 'key-chord)
 (require-package 'matlab-mode)

@@ -120,6 +120,11 @@
 	     (load "c_mode.el")
 	     ))
 
+(add-hook 'c++-mode-hook
+	  '(lambda ()
+	     (load "cpp_mode.el")
+	     ))
+
 ;;Latex  mode
 (add-hook 'TeX-mode-hook ( lambda()
 		   (load "tex_mode.el")
@@ -162,3 +167,4 @@
 
 ;;ORG-MODE
 (load "org_mode.el")
+

@@ -79,3 +79,17 @@
 ; highlight parentheses when the cursor is next to them
 (require 'paren)
 (show-paren-mode t)
+
+; Semantic
+
+(global-semantic-highlight-func-mode t)
+(global-semantic-stickyfunc-mode t)
+(global-semantic-decoration-mode t)
+(global-semantic-idle-local-symbol-highlight-mode t)
+(global-semantic-idle-scheduler-mode t)
+(global-semantic-idle-completions-mode t)
+(global-semantic-idle-summary-mode t)
+(semantic-mode t)
+
+(provide 'prog_mode)
+;;; prog_mode.el ends here

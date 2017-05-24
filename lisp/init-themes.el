@@ -5,11 +5,11 @@
 
 ;(load-theme 'solarized-dark t)
 ;(load-theme 'zenburn t)
-(load-theme 'sanityinc-tomorrow-night t)
+(load-theme 'sanityinc-tomorrow-bright t)
 
 ;; set transparency 
-(set-frame-parameter (selected-frame) 'alpha '(85 85))
-(add-to-list 'default-frame-alist '(alpha 85 85));; set transparency
+;(set-frame-parameter (selected-frame) 'alpha '(85 85))
+;(add-to-list 'default-frame-alist '(alpha 85 85));; set transparency
 
 ;; Custom line num disabled
 (defcustom linum-disabled-modes-list '(eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode doc-view-mode)
