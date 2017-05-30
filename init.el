@@ -154,10 +154,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(custom-safe-themes
+   (quote
+    ("84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" default)))
  '(org-agenda-files (quote ("~/repos/org/todo.org" "~/repos/org/tutorial.org")))
  '(package-selected-packages
    (quote
-    (interleave helm-bibtex org-ref zenburn-theme vbasense solarized-theme smex python-environment projectile key-chord iy-go-to-char flycheck fill-column-indicator etags-table etags-select ess-R-object-popup ess-R-data-view epc ecb default-text-scale ctags-update color-theme-sanityinc-tomorrow color-theme auctex))))
+    (smart-mode-line-powerline-theme smart-mode-line interleave helm-bibtex org-ref zenburn-theme vbasense solarized-theme smex python-environment projectile key-chord iy-go-to-char flycheck fill-column-indicator etags-table etags-select ess-R-object-popup ess-R-data-view epc ecb default-text-scale ctags-update color-theme-sanityinc-tomorrow color-theme auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
