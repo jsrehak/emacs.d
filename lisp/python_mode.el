@@ -1,5 +1,6 @@
 ;;Auto-complete
- (global-auto-complete-mode t)
+(global-auto-complete-mode t)
+(setq python-shell-completion-native-enable nil)
 
 ;; use IPython
 (setq-default py-shell-name "ipython")
