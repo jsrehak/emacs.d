@@ -24,4 +24,7 @@
   :group 'linum
   )
 
+(set-default-font "Inconsolata-12")
+
+
 (provide 'init-themes)
