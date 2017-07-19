@@ -13,7 +13,8 @@
 ;(add-to-list 'default-frame-alist '(alpha 85 85));; set transparency
 
 ;; Powerline
-(setq sml/theme 'powerline)
+;(setq sml/theme 'powerline)
+(setq sml/theme 'dark)
 (add-hook 'after-init-hook 'sml/setup)
 
 ;; Custom line num disabled
