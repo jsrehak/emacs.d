@@ -41,7 +41,7 @@
     (delete-other-windows)))
 
 ;; KEYBINDINGS =======================================================
-(define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
+;; (define-key global-map (kbd "C-c t a") 'air-pop-to-org-agenda)
 (define-key global-map "\C-cl" 'org-store-link)
 (define-key global-map (kbd "C-c a") 'org-agenda)
 

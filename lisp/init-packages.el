@@ -35,6 +35,7 @@ locate PACKAGE. "
 (require-package 'ess-R-object-popup)
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
+(require-package 'haskell-mode)
 (require-package 'helm-bibtex)
 (require-package 'iy-go-to-char)
 (require-package 'interleave)
