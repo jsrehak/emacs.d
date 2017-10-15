@@ -9,8 +9,8 @@
 ;(load-theme 'sanityinc-tomorrow-night t)
 
 ;; set transparency 
-(set-frame-parameter (selected-frame) 'alpha '(85 85))
-(add-to-list 'default-frame-alist '(alpha 85 85));; set transparency
+;(set-frame-parameter (selected-frame) 'alpha '(85 85))
+;(add-to-list 'default-frame-alist '(alpha 85 85));; set transparency
 
 (defun toggle-transparency ()
   (interactive)
