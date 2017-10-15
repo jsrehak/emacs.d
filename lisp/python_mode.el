@@ -19,6 +19,11 @@
 ; try to automagically figure out indentation
 (setq py-smart-indentation t)
 
+; Indenting
+(setq tab-width 4)
+(setq python-indent 4)
+(setq indent-tabs-mode nil)
+
 ;(setq jedi:server-command '("jediepcserver"))
 ;(jedi:setup)
 ;(setq jedi:complete-on-dot t)
