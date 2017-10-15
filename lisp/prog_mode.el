@@ -20,7 +20,7 @@
 
 ; number of characters until the fill column
 (fci-mode t)
-(setq fill-column 70)
+(setq fci-rule-column 80)
 
 ; specify the fringe width for windows -- this sets both the left and
 ; right fringes to 10

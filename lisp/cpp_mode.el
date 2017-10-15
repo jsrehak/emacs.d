@@ -7,3 +7,6 @@
 (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
 (local-set-key "." 'semantic-complete-self-insert)
 (local-set-key ">" 'semantic-complete-self-insert))
+
+; number of characters until the fill column
+(setq fci-rule-column 80)
