@@ -23,6 +23,8 @@ locate PACKAGE. "
 ;;Install packages if they are not installed
 (require-package 'auctex)
 (require-package 'auto-complete)
+(require-package 'cmake-font-lock)
+(require-package 'cmake-mode)
 (require-package 'color-theme)
 (require-package 'dash)
 (require-package 'default-text-scale)
@@ -43,6 +45,7 @@ locate PACKAGE. "
 (require-package 'let-alist)
 (require-package 'key-chord)
 (require-package 'matlab-mode)
+(require-package 'modern-cpp-font-lock)
 ;;(require-package 'org)
 (require-package 'org-ref)
 (require-package 'popup)

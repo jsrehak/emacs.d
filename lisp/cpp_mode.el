@@ -7,6 +7,8 @@
 (local-set-key "\C-cp" 'semantic-analyze-proto-impl-toggle))
 (local-set-key "." 'semantic-complete-self-insert)
 (local-set-key ">" 'semantic-complete-self-insert))
+(modern-c++-font-lock-global-mode t)
 
 ; number of characters until the fill column
 (setq fci-rule-column 80)
+(setq-default comment-column 40)
