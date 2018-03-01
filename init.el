@@ -112,6 +112,7 @@
 ;; Provides the google C/C++ coding style. You may wish to add
 (add-hook 'c-mode-common-hook 'google-set-c-style)
 (add-hook 'c-mode-common-hook 'google-make-newline-indent)
+(add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode)) ;; Add .h files to c++
 
 ;;Python mode hook
 (add-hook 'python-mode-hook
