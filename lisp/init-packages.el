@@ -34,6 +34,7 @@ locate PACKAGE. "
 (require-package 'epl)
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
+(require-package 'helm)
 (require-package 'google-c-style)
 (require-package 'helm-bibtex)
 (require-package 'iy-go-to-char)
@@ -51,8 +52,5 @@ locate PACKAGE. "
 (require-package 'smart-mode-line-powerline-theme)
 (require-package 'log4e)
 (require-package 'yaxception)
-
-
-
 
 (provide 'init-packages)
