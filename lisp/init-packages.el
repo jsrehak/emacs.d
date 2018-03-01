@@ -32,13 +32,9 @@ locate PACKAGE. "
 (require-package 'ecb)
 (require-package 'epc)
 (require-package 'epl)
-(require-package 'ess)
-(require-package 'ess-R-data-view)
-(require-package 'ess-R-object-popup)
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
 (require-package 'google-c-style)
-(require-package 'haskell-mode)
 (require-package 'helm-bibtex)
 (require-package 'iy-go-to-char)
 (require-package 'interleave)
@@ -55,9 +51,6 @@ locate PACKAGE. "
 (require-package 'smart-mode-line-powerline-theme)
 (require-package 'log4e)
 (require-package 'yaxception)
-(require-package 'vbasense)
-
-
 
 
 
