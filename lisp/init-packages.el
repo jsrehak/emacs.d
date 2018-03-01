@@ -35,6 +35,7 @@ locate PACKAGE. "
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
 (require-package 'helm)
+(require-package 'helm-gtags)
 (require-package 'google-c-style)
 (require-package 'helm-bibtex)
 (require-package 'iy-go-to-char)

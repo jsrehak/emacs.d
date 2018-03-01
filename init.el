@@ -173,7 +173,7 @@
  '(org-agenda-files (quote ("~/repos/org/todo.org")))
  '(package-selected-packages
    (quote
-    (cmake-font-lock cmake-mode protobuf-mode modern-cpp-font-lock haskell-mode smart-mode-line-powerline-theme smart-mode-line interleave helm-bibtex org-ref zenburn-theme vbasense solarized-theme smex python-environment projectile key-chord iy-go-to-char flycheck fill-column-indicator etags-table etags-select ess-R-object-popup ess-R-data-view epc ecb default-text-scale ctags-update color-theme-sanityinc-tomorrow color-theme auctex))))
+    (helm-gtags cmake-font-lock cmake-mode protobuf-mode modern-cpp-font-lock haskell-mode smart-mode-line-powerline-theme smart-mode-line interleave helm-bibtex org-ref zenburn-theme vbasense solarized-theme smex python-environment projectile key-chord iy-go-to-char flycheck fill-column-indicator etags-table etags-select ess-R-object-popup ess-R-data-view epc ecb default-text-scale ctags-update color-theme-sanityinc-tomorrow color-theme auctex))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
