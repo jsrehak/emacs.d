@@ -111,7 +111,7 @@
 (require 'ecb)
 
 ;; HELM
-;; (require 'init-helm')
+(require 'init-helm)
 
 ;;;;Hooks
 ;;Programming mode hook

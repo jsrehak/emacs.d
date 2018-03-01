@@ -10,6 +10,11 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action) ; rebind tab to run persistent action
 (define-key helm-map (kbd "C-i") 'helm-execute-persistent-action) ; make TAB work in terminal
 (define-key helm-map (kbd "C-z")  'helm-select-action) ; list actions using C-z
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(setq helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match    t)
+
 
 (when (executable-find "curl")
   (setq helm-google-suggest-use-curl-p t))
@@ -35,8 +40,8 @@
 (add-hook 'helm-minibuffer-set-up-hook
           'spacemacs//helm-hide-minibuffer-maybe)
 
-(setq helm-autoresize-max-height 0)
-(setq helm-autoresize-min-height 20)
+(setq helm-autoresize-max-height 40)
+(setq helm-autoresize-min-height 40)
 (helm-autoresize-mode 1)
 
 (helm-mode 1)
