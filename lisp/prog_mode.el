@@ -82,6 +82,9 @@
 
 ; Semantic
 
+(require 'cc-mode)
+(require 'semantic)
+(global-semanticdb-minor-mode t)
 (global-semantic-highlight-func-mode t)
 (global-semantic-stickyfunc-mode t)
 (global-semantic-decoration-mode t)

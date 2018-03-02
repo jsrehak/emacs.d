@@ -26,6 +26,7 @@ locate PACKAGE. "
 (require-package 'cmake-font-lock)
 (require-package 'cmake-mode)
 (require-package 'color-theme)
+(require-package 'company)
 (require-package 'dash)
 (require-package 'default-text-scale)
 (require-package 'deferred)
@@ -51,6 +52,7 @@ locate PACKAGE. "
 (require-package 'smex)
 (require-package 'smart-mode-line)
 (require-package 'smart-mode-line-powerline-theme)
+(require-package 'sr-speedbar) ; better speedbar
 (require-package 'log4e)
 (require-package 'yaxception)
 
