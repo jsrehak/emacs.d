@@ -13,7 +13,6 @@
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (require 'init-packages)
 (require 'init-themes)
-(require 'init-linum)
 ;(require 'init-auto-complete)
 
 ;;Set default mode to text mode and turn on auto-fill
@@ -100,6 +99,9 @@
 (setq smex-save-file (expand-file-name ".smex-items" user-emacs-directory))
 (global-set-key [remap execute-extended-command] 'smex)
 
+;; PDF-Tools
+(pdf-tools-install)
+
 ;;Autocomplete
 (require 'auto-complete-config)
 (ac-config-default)
@@ -148,11 +150,13 @@
 (add-hook 'TeX-mode-hook ( lambda()
 		   (load "tex_mode.el")
                    ))
+(add-hook 'LaTeX-mode-hook 'TeX-source-correlate-mode)
 
 ;;Latex  mode
 (add-hook 'org-mode-hook ( lambda()
 		   (setq show-trailing-whitespace nil)
-			   ))
+                   ))
+
 
 ;;Markdown mode
 (autoload 'markdown-mode "markdown_mode"
@@ -164,6 +168,8 @@
 		   (load "shell_mode.el")
                    ))
 
+(require 'init-linum)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -172,10 +178,14 @@
  '(custom-safe-themes
    (quote
     ("c74e83f8aa4c78a121b52146eadb792c9facc5b1f02c917e3dbb454fca931223" "3c83b3676d796422704082049fc38b6966bcad960f896669dfc21a7a37a748fa" "a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" "84d2f9eeb3f82d619ca4bfffe5f157282f4779732f48a5ac1484d94d5ff5b279" default)))
+ '(linum-disabled-modes-list
+   (quote
+    (eshell-mode wl-summary-mode compilation-mode org-mode text-mode dired-mode doc-view-mode pdf-view-mode)))
  '(org-agenda-files (quote ("~/repos/org/todo.org")))
  '(package-selected-packages
    (quote
-    (company sr-speedbar helm-gtags cmake-font-lock cmake-mode protobuf-mode modern-cpp-font-lock haskell-mode smart-mode-line-powerline-theme smart-mode-line interleave helm-bibtex org-ref zenburn-theme vbasense solarized-theme smex python-environment projectile key-chord iy-go-to-char flycheck fill-column-indicator etags-table etags-select ess-R-object-popup ess-R-data-view epc ecb default-text-scale ctags-update color-theme-sanityinc-tomorrow color-theme auctex))))
+    (company sr-speedbar helm-gtags cmake-font-lock cmake-mode protobuf-mode modern-cpp-font-lock haskell-mode smart-mode-line-powerline-theme smart-mode-line interleave helm-bibtex org-ref zenburn-theme vbasense solarized-theme smex python-environment projectile key-chord iy-go-to-char flycheck fill-column-indicator etags-table etags-select ess-R-object-popup ess-R-data-view epc ecb default-text-scale ctags-update color-theme-sanityinc-tomorrow color-theme auctex)))
+ '(safe-local-variable-values (quote ((flycheck-gcc-include-path . "./inc")))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

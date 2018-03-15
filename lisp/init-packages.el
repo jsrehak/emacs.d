@@ -47,6 +47,7 @@ locate PACKAGE. "
 (require-package 'modern-cpp-font-lock)
 ;;(require-package 'org)
 (require-package 'org-ref)
+(require-package 'pdf-tools)
 (require-package 'popup)
 (require-package 'python-environment)
 (require-package 'smex)
