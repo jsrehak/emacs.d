@@ -27,6 +27,7 @@ locate PACKAGE. "
 (require-package 'cmake-mode)
 (require-package 'color-theme)
 (require-package 'company)
+(require-package 'company-irony)
 (require-package 'dash)
 (require-package 'default-text-scale)
 (require-package 'deferred)
