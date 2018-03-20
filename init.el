@@ -1,17 +1,84 @@
 ;;;;.emacs file
 ;;;Joshua Rehak, 5/2/2015
 
-;; Startup
-; Add custom lisp file location
+;;; TABLE OF CONTENTS
+;; #packages
+;; #package_settings : Package Settings
+;;
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
 (package-initialize)
-
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-(require 'init-packages)
+
+; ==============================================================================
+;                   _
+;                  | |
+;  _ __   __ _  ___| | ____ _  __ _  ___  ___
+; | '_ \ / _` |/ __| |/ / _` |/ _` |/ _ \/ __|
+; | |_) | (_| | (__|   < (_| | (_| |  __/\__ \
+; | .__/ \__,_|\___|_|\_\__,_|\__, |\___||___/
+; | |                          __/ |
+; |_|                         |___/
+;
+; #packages
+; ==============================================================================
+
+(require 'package)
+
+; Add package repositories
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/") t)
+
+; Custom function to download a package
+(defun require-package (package &optional min-version no-refresh)
+  "Installs given PACKAGE with optional MIN-VERSION, if NO-REFRESH is 
+is non-nill, the available package lists will not be redownloaded to
+locate PACKAGE. "
+  (if (package-installed-p package min-version)
+      t
+    (if (or (assoc package package-archive-contents) no-refresh)
+	(package-install package)
+      (progn
+	(package-refresh-contents)
+	(require-package package min-version t)))))
+
+(package-initialize)                                        
+
+;;Install packages if they are not installed
+(require-package 'auctex)
+(require-package 'auto-complete)
+(require-package 'cmake-font-lock)
+(require-package 'cmake-mode)
+(require-package 'color-theme)
+(require-package 'company)
+(require-package 'company-irony)
+(require-package 'dash)
+(require-package 'default-text-scale)
+(require-package 'deferred)
+(require-package 'ecb)
+(require-package 'epc)
+(require-package 'epl)
+(require-package 'fill-column-indicator)
+(require-package 'flycheck)
+(require-package 'helm)
+(require-package 'helm-gtags)
+(require-package 'google-c-style)
+(require-package 'helm-bibtex)
+(require-package 'iy-go-to-char)
+(require-package 'interleave)
+(require-package 'let-alist)
+(require-package 'key-chord)
+(require-package 'modern-cpp-font-lock)
+;;(require-package 'org-ref)
+(require-package 'pdf-tools)
+(require-package 'popup)
+(require-package 'python-environment)
+(require-package 'smex)
+(require-package 'smart-mode-line)
+(require-package 'smart-mode-line-powerline-theme)
+(require-package 'sr-speedbar) ; better speedbar
+(require-package 'log4e)
+(require-package 'yaxception)
+
 (require 'init-themes)
 ;(require 'init-auto-complete)
 
@@ -83,7 +150,7 @@
 ; | .__/ \__,_|\___|_|\_\__,_|\__, |\___| |___/\___|\__|\__|_|_| |_|\__, |___/
 ; |_|                         |___/                                 |___/
 ;
-; packagesettings
+; #package_settings
 ; ==============================================================================
 
 ;;;;Package settings
