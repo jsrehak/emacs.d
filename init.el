@@ -59,8 +59,10 @@ locate PACKAGE. "
 (require-package 'epl)
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
+(require-package 'flycheck-irony)
 (require-package 'helm)
 (require-package 'helm-gtags)
+(require-package 'irony-eldoc)
 (require-package 'google-c-style)
 (require-package 'helm-bibtex)
 (require-package 'iy-go-to-char)
@@ -182,8 +184,25 @@ locate PACKAGE. "
 ;; HELM
 (require 'init-helm)
 
-(eval-after-load 'company
-  '(add-to-list 'company-backends 'company-irony))
+
+;; Company
+(require 'company)
+(add-hook 'prog-mode-hook 'global-company-mode)
+
+;; Irony
+(require 'irony)
+(setq-default irony-cdb-compilation-databases '(irony-cdb-libclang
+                                                      irony-cdb-clang-complete))
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(require 'company-irony)
+(eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
+
+(require 'flycheck-irony)
+(eval-after-load 'flycheck '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
+
+(require 'irony-eldoc)
+(add-hook 'irony-mode-hook #'irony-eldoc)
 
 ;;;;Hooks
 ;;Programming mode hook
@@ -191,8 +210,6 @@ locate PACKAGE. "
           '(lambda ()
              (load "prog_mode.el")
              ))
-(require 'company)
-(add-hook 'prog-mode-hook 'global-company-mode)
 
 ;; Provides the google C/C++ coding style. You may wish to add
 (add-hook 'c-mode-common-hook 'google-set-c-style)
