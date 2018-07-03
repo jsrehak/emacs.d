@@ -45,7 +45,7 @@ locate PACKAGE. "
 
 ;;Install packages if they are not installed
 (require-package 'auctex)
-(require-package 'auto-complete)
+;;(require-package 'auto-complete)
 (require-package 'cmake-font-lock)
 (require-package 'cmake-mode)
 (require-package 'color-theme)
@@ -54,7 +54,7 @@ locate PACKAGE. "
 (require-package 'dash)
 (require-package 'default-text-scale)
 (require-package 'deferred)
-(require-package 'ecb)
+;;(require-package 'ecb)
 (require-package 'epc)
 (require-package 'epl)
 (require-package 'fill-column-indicator)
@@ -172,8 +172,8 @@ locate PACKAGE. "
 (pdf-tools-install)
 
 ;;Autocomplete
-(require 'auto-complete-config)
-(ac-config-default)
+;(require 'auto-complete-config)
+;(ac-config-default)
 
 ;;Reftex
 (require 'reftex)
@@ -184,12 +184,15 @@ locate PACKAGE. "
 ;; HELM
 (require 'init-helm)
 
+;; Speedbar
+(require 'sr-speedbar)
 
-;; Company
+;; Company -- Complete Anything
 (require 'company)
 (add-hook 'prog-mode-hook 'global-company-mode)
+(setq company-idle-delay 0)
 
-;; Irony
+;; Irony Mode -- For C++ and supporting Company, flycheck, and eldoc modes
 (require 'irony)
 (setq-default irony-cdb-compilation-databases '(irony-cdb-libclang
                                                       irony-cdb-clang-complete))
