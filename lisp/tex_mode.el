@@ -1,5 +1,6 @@
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
+(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
 (turn-on-auto-fill)
 (flyspell-mode)
 (turn-on-reftex)
@@ -29,3 +30,6 @@
       '(
             (?\ "partial" "Misc Symbol" 8706) ;; #X2202
         ))
+
+(setq TeX-source-correlate-method 'synctex)
+(setq TeX-source-correlate-start-server t)

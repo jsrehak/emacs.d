@@ -26,19 +26,19 @@ locate PACKAGE. "
 (require-package 'cmake-font-lock)
 (require-package 'cmake-mode)
 (require-package 'color-theme)
+(require-package 'company)
+(require-package 'company-irony)
 (require-package 'dash)
 (require-package 'default-text-scale)
 (require-package 'deferred)
 (require-package 'ecb)
 (require-package 'epc)
 (require-package 'epl)
-(require-package 'ess)
-(require-package 'ess-R-data-view)
-(require-package 'ess-R-object-popup)
 (require-package 'fill-column-indicator)
 (require-package 'flycheck)
+(require-package 'helm)
+(require-package 'helm-gtags)
 (require-package 'google-c-style)
-(require-package 'haskell-mode)
 (require-package 'helm-bibtex)
 (require-package 'iy-go-to-char)
 (require-package 'interleave)
@@ -48,18 +48,14 @@ locate PACKAGE. "
 (require-package 'modern-cpp-font-lock)
 ;;(require-package 'org)
 (require-package 'org-ref)
+(require-package 'pdf-tools)
 (require-package 'popup)
 (require-package 'python-environment)
 (require-package 'smex)
 (require-package 'smart-mode-line)
 (require-package 'smart-mode-line-powerline-theme)
+(require-package 'sr-speedbar) ; better speedbar
 (require-package 'log4e)
 (require-package 'yaxception)
-(require-package 'vbasense)
-
-
-
-
-
 
 (provide 'init-packages)
