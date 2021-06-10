@@ -38,7 +38,7 @@
   :group 'linum
   )
 
-(set-default-font "Inconsolata-12")
+(set-frame-font "Inconsolata-12")
 
 
 (provide 'init-themes)
