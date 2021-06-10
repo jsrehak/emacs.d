@@ -6,7 +6,7 @@
 ;; #package_settings : Package Settings
 ;;
 
-(package-initialize)
+;;(package-initialize)
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ; ==============================================================================
@@ -65,8 +65,6 @@ locate PACKAGE. "
 (require-package 'irony-eldoc)
 (require-package 'google-c-style)
 (require-package 'helm-bibtex)
-(require-package 'iy-go-to-char)
-(require-package 'interleave)
 (require-package 'let-alist)
 (require-package 'key-chord)
 (require-package 'modern-cpp-font-lock)
@@ -81,8 +79,8 @@ locate PACKAGE. "
 (require-package 'log4e)
 (require-package 'yaxception)
 
-(require 'init-themes)
 ;(require 'init-auto-complete)
+(require 'init-themes)
 
 ;;Set default mode to text mode and turn on auto-fill
 (setq-default major-mode 'text-mode)
@@ -106,11 +104,6 @@ locate PACKAGE. "
 (global-set-key "\M-z" 'zap-up-to-char)
 ;; Bind a key to hippie-expand
 (global-set-key "\M-/" 'hippie-expand)
-;; Bind a key chord for iy-go-to-char
-;(global-set-key "\M-m" 'iy-go-to-char)
-(key-chord-mode t)
-(key-chord-define-global "fg" 'iy-go-to-char)
-(key-chord-define-global "df" 'iy-go-to-char-backward)
 ;; ORG Capture
 (define-key global-map (kbd "C-c c") 'org-capture)
 
@@ -178,8 +171,8 @@ locate PACKAGE. "
 ;;Reftex
 (require 'reftex)
 
-;;ECB
-(require 'ecb)
+;; ;;ECB
+;; (require 'ecb)
 
 ;; HELM
 (require 'init-helm)
@@ -282,4 +275,3 @@ locate PACKAGE. "
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
